@@ -1,6 +1,6 @@
 {
   "name": "ly-tool-git-commitlint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于vue-cli3的代码提交检查规范",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "author": "liuyang",

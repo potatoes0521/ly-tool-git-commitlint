@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-18 13:34:09
+ * @LastEditTime: 2021-03-18 15:20:14
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -46,7 +46,7 @@ npm i ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli hu
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "config": {
@@ -72,35 +72,52 @@ npm run cz  # git add . && git commit -m 'feat:(xxx): xxx'
 npm run log # 生成 CHANGELOG
 ```
 
-1. 代码提交 npm run cz
+1. 代码提交 npm run cz 
+   
+[![2a9618603ec5a160b.md.png](https://www.imageoss.com/images/2021/03/18/2a9618603ec5a160b.md.png)](https://www.imageoss.com/image/Fw9uC)
 
-![commander](./public/commander.png)
+1. 选择一个类型会自动询问
 
-2. 选择一个类型会自动询问
-
-    1. (非必填）本次提交的改变所影响的范围
+    1. (必填）本次提交的改变所影响的范围
     2. (必填）写一个简短的变化描述
     3. (非必填）提供更详细的变更描述
     4. (非必填)是否存在不兼容变更?
     5. (非必填)此次变更是否影响某些打开的 issue 
  
-![prompt](./public/prompt.png)
+[![1206a5d4ad62c5a7d.md.png](https://www.imageoss.com/images/2021/03/18/1206a5d4ad62c5a7d.md.png)](https://www.imageoss.com/image/Fw2m9)
 
 ### changelog 演示
 
-![changelog](./public/changelog.png)
+[![3ff1905703eeff48c.png](https://www.imageoss.com/images/2021/03/18/3ff1905703eeff48c.png)](https://www.imageoss.com/image/FwbHe)
 
-## 规则
+## 类型
 
 | 规范名   | 描述                                                    |
 | -------- | ------------------------------------------------------- |
-| docs     | 仅仅修改了文档，比如 README, CHANGELOG, CONTRIBUTE 等等 |
-| chore    | 改变构建流程、或者增加依赖库、工具等                    |
-| feat     | 新增 feature                                            |
-| fix      | 修复 bug                                                |
-| merge    | 合并分之                                                |
-| perf     | 优化相关，比如提升性能、体验                            |
-| refactor | 代码重构，没有加新功能或者修复 bug                      |
-| revert   | 回滚到上一个版本                                        |
-| style    | 仅仅修改了空格、格式缩进、都好等等，不改变代码逻辑      |
-| test     | 测试用例，包括单元测试、集成测试等                      |
+| feat     | 一个新功能|
+| ui     | 更新用户界面和样式文件|
+| fix     | Bug修复|
+| docs     | 修改文档|
+| merge     | 合并代码|
+| art     | 代码格式化|
+| perf     | 性能优化|
+| refactor     | 重构代码|
+| revert     | 撤销上一次的提交|
+| release     | 发布版本|
+| test     | 测试用例|
+| build     | 影响构建系统或外部依赖的更改（例如：gulp，npm，webpack）|
+| init     | 初次提交|
+| dep_add     | 添加依赖|
+| dep_rm     | 删除依赖|
+
+## 范围
+
+| 规范名   | 描述                                                    |
+| -------- | ------------------------------------------------------- |
+| global     | 影响整个项目|
+| noproblem     | 无影响|
+| ui     | UI 界面|
+| data     | 数据变化|
+| component     | 影响公共组件使用|
+| unknown     | 不知道影响范围|
+| modules ||

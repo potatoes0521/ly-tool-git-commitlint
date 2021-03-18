@@ -1,3 +1,16 @@
+/*
+ * @Author: liuYang
+ * @Description: 请填写描述信息
+ * @Path: 引入路径
+ * @Date: 2021-03-18 13:17:52
+ * @LastEditors: liuYang
+ * @LastEditTime: 2021-03-18 14:24:41
+ * @MustParam: 必传参数
+ * @OptionalParam: 选传参数
+ * @EmitFunction: 函数
+ * @Slot/Props.children: 提供的插槽或render
+ * @Examples: 使用示例
+ */
 module.exports = (api, option) => {
   if (option.replace) {
     api.render('./template');
@@ -14,7 +27,7 @@ module.exports = (api, option) => {
       },
       "husky": {
         "hooks": {
-          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+          "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
         }
       },
       "config": {
