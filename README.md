@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-18 15:20:14
+ * @LastEditTime: 2021-03-18 15:35:39
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -24,7 +24,7 @@
 
 ## 配置
 
-1. npm install
+1. 下载
 
 ```bash
 
@@ -32,7 +32,7 @@
 npm i ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli husky -D
 
 # yarn 
-npm i ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli husky -D
+yarn dd ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli husky -D
 
 ```
 
@@ -78,8 +78,8 @@ npm run log # 生成 CHANGELOG
 
 1. 选择一个类型会自动询问
 
-    1. (必填）本次提交的改变所影响的范围
-    2. (必填）写一个简短的变化描述
+    1. (必填）本次提交的改变所影响的范围(选择)
+    2. (必填）写一个简短的变化描述(选择)
     3. (非必填）提供更详细的变更描述
     4. (非必填)是否存在不兼容变更?
     5. (非必填)此次变更是否影响某些打开的 issue 
