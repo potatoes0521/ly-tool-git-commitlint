@@ -1,5 +1,5 @@
-{{#if scope}} {{scope}} |
-{{~else}} - |
+| {{#if scope}} {{scope}} |
+{{~else}} no select |
 {{~/if}} {{#if subject}}
   {{~subject}}
 {{~else}}
@@ -23,6 +23,8 @@
 {{~else}}
   {{~hash}}
 {{~/if}}
+|
+
 
 {{~!-- commit references --}}
 {{~#if references~}}

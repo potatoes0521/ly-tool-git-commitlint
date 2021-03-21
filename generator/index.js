@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-18 14:24:41
+ * @LastEditTime: 2021-03-20 21:37:14
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -16,10 +16,10 @@ module.exports = (api, option) => {
     api.render('./template');
     api.extendPackage({
       devDependencies: {
-        "commitizen": "^4.0.3",
-        "commitlint": "^8.2.0",
-        "conventional-changelog-cli": "^2.0.28",
-        "husky": "^3.0.9"
+        "commitizen": "^4.2.3",
+        "commitlint": "^12.0.1",
+        "conventional-changelog-cli": "^2.1.1",
+        "husky": "^3.0.9",
       },
       scripts: {
         "log": "conventional-changelog --config ./node_modules/ly-tool-git-commitlint/lib/log -i CHANGELOG.md -s -r 0",
@@ -27,7 +27,7 @@ module.exports = (api, option) => {
       },
       "husky": {
         "hooks": {
-          "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
+          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
       },
       "config": {

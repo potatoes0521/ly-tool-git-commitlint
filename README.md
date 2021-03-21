@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-18 15:35:39
+ * @LastEditTime: 2021-03-20 21:38:32
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -13,14 +13,17 @@
 -->
 ## Git commit 规范
 
-结合 `commitizen` `commitlint` `conventional-changelog-cli` `husky`，进行封装，一键安装，开箱即用的 `git commit` 规范。
+结合 `commitizen` `commitlint` `conventional-changelog-cli` `husky`，进行封装，一键安装，开箱即用的 `git commit` 规范。 
+
+根据 大佬 luoxue-victor 的 `vue-cli-plugin-commitlint` 思路来的一个的插件
 
 ## 功能
 
-1. 自动检测 commit 是否规范，不规范不允许提交
-2. 自动提示 commit 填写格式。不怕忘记规范怎么写
-3. 集成 git add . && git commit 不需要在执行两个命令
-4. 自动生成 changelog
+1. 自动提示 commit 填写格式。 
+2. 自动提示影响范围
+3. commit 是否规范，不规范不允许提交
+4. 集成 git add . && git commit 不需要在执行两个命令
+5. 自动生成 changelog
 
 ## 配置
 
@@ -28,11 +31,14 @@
 
 ```bash
 
+# 为了防止和已有的包冲突，可以提前移除 `node_modules` 后再安装
+rm -rf node_modules
+
 # npm
-npm i ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli husky -D
+npm i ly-tool-git-commitlint commitizen@4.2.3 commitlint@12.0.1 conventional-changelog-cli@2.1.1 husky@3.0.9 husky@3.0.9 -D
 
 # yarn 
-yarn dd ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli husky -D
+yarn add ly-tool-git-commitlint commitizen@4.2.3 commitlint@12.0.1 conventional-changelog-cli@2.1.1 husky@3.0.9 -D
 
 ```
 
@@ -46,7 +52,7 @@ yarn dd ly-tool-git-commitlint commitizen commitlint conventional-changelog-cli 
   },
   "husky": {
     "hooks": {
-      "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "config": {
@@ -76,19 +82,21 @@ npm run log # 生成 CHANGELOG
    
 [![2a9618603ec5a160b.md.png](https://www.imageoss.com/images/2021/03/18/2a9618603ec5a160b.md.png)](https://www.imageoss.com/image/Fw9uC)
 
-1. 选择一个类型会自动询问
-
-    1. (必填）本次提交的改变所影响的范围(选择)
-    2. (必填）写一个简短的变化描述(选择)
-    3. (非必填）提供更详细的变更描述
-    4. (非必填)是否存在不兼容变更?
-    5. (非必填)此次变更是否影响某些打开的 issue 
+1. 标注一个提交的类型(选择)
  
 [![1206a5d4ad62c5a7d.md.png](https://www.imageoss.com/images/2021/03/18/1206a5d4ad62c5a7d.md.png)](https://www.imageoss.com/image/Fw2m9)
 
+2. (必填）本次提交的改变所影响的范围(选择)
+
+[![16162376442926ca10d2e35ca8f50.md.jpg](https://www.imageoss.com/images/2021/03/20/16162376442926ca10d2e35ca8f50.md.jpg)](https://www.imageoss.com/image/F81OH)
+
+3. (非必填）提供更详细的变更描述
+4. (非必填)是否存在不兼容变更?
+5. (非必填)此次变更是否影响某些打开的 bug/issue 
+
 ### changelog 演示
 
-[![3ff1905703eeff48c.png](https://www.imageoss.com/images/2021/03/18/3ff1905703eeff48c.png)](https://www.imageoss.com/image/FwbHe)
+[![WX20210320-1857072x6265fb6784e85b8c.md.png](https://www.imageoss.com/images/2021/03/20/WX20210320-1857072x6265fb6784e85b8c.md.png)](https://www.imageoss.com/image/F86zE)
 
 ## 类型
 
@@ -120,4 +128,28 @@ npm run log # 生成 CHANGELOG
 | data     | 数据变化|
 | component     | 影响公共组件使用|
 | unknown     | 不知道影响范围|
-| modules ||
+
+
+## 下版本准本使用generator实现基础配置 敬请期待  欢迎一起交流 欢迎star
+
+#### 2021-3-20  
+
+##### 1.1.10
+
+1. 更新readme 
+
+##### 1.1.1 - 1.1.9
+
+1. 优化scope字段在changelog文件内的展示 由英文展示为中文  
+2. 部分性能优化  
+3. husky生效  
+
+#### 2021-3-19  
+
+##### 1.1.0
+
+1. 修复没有选择scope时changelog错位的bug  
+2. 限定husky包版本  
+3. scope删除modules字段  
+
+

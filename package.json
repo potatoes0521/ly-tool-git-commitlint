@@ -1,6 +1,6 @@
 {
   "name": "ly-tool-git-commitlint",
-  "version": "1.0.5",
+  "version": "1.1.10",
   "description": "基于vue-cli3的代码提交检查规范",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "cz": "npm run log && git add . && git cz"
   },
   "devDependencies": {
-    "commitizen": "^4.0.3",
-    "commitlint": "^8.2.0",
-    "conventional-changelog-cli": "^2.0.28",
+    "commitizen": "^4.2.3",
+    "commitlint": "^12.0.1",
+    "conventional-changelog-cli": "^2.1.1",
     "husky": "^3.0.9"
   },
   "config": {
@@ -20,9 +20,23 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "author": "liuyang",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potatoes0521/ly-tool-commitlint/issues"
+  },
+  "homepage": "https://github.com/potatoes0521/ly-tool-commitlint#readme",
+  "keywords": [
+    "git",
+    "git commit",
+    "commitlint",
+    "conventional-changelog-cli",
+    "husky",
+    "commitizen",
+    "pre commit",
+    "commitlint tool"
+  ]
 }
