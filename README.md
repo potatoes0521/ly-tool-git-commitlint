@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-20 21:38:32
+ * @LastEditTime: 2021-03-22 09:40:24
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -14,8 +14,6 @@
 ## Git commit 规范
 
 结合 `commitizen` `commitlint` `conventional-changelog-cli` `husky`，进行封装，一键安装，开箱即用的 `git commit` 规范。 
-
-根据 大佬 luoxue-victor 的 `vue-cli-plugin-commitlint` 思路来的一个的插件
 
 ## 功能
 
@@ -127,7 +125,7 @@ npm run log # 生成 CHANGELOG
 | ui     | UI 界面|
 | data     | 数据变化|
 | component     | 影响公共组件使用|
-| unknown     | 不知道影响范围|
+| unknown     | 不知道影响范围|  
 
 
 ## 下版本准本使用generator实现基础配置 敬请期待  欢迎一起交流 欢迎star
