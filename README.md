@@ -4,7 +4,7 @@
  * @Path: 引入路径
  * @Date: 2021-03-18 13:17:52
  * @LastEditors: liuYang
- * @LastEditTime: 2021-03-22 09:40:24
+ * @LastEditTime: 2021-03-24 16:31:24
  * @MustParam: 必传参数
  * @OptionalParam: 选传参数
  * @EmitFunction: 函数
@@ -77,17 +77,15 @@ npm run log # 生成 CHANGELOG
 ```
 
 1. 代码提交 npm run cz 
+   标注一个提交的类型(选择)
    
 [![2a9618603ec5a160b.md.png](https://www.imageoss.com/images/2021/03/18/2a9618603ec5a160b.md.png)](https://www.imageoss.com/image/Fw9uC)
-
-1. 标注一个提交的类型(选择)
- 
-[![1206a5d4ad62c5a7d.md.png](https://www.imageoss.com/images/2021/03/18/1206a5d4ad62c5a7d.md.png)](https://www.imageoss.com/image/Fw2m9)
 
 2. (必填）本次提交的改变所影响的范围(选择)
 
 [![16162376442926ca10d2e35ca8f50.md.jpg](https://www.imageoss.com/images/2021/03/20/16162376442926ca10d2e35ca8f50.md.jpg)](https://www.imageoss.com/image/F81OH)
 
+[![1206a5d4ad62c5a7d.md.png](https://www.imageoss.com/images/2021/03/18/1206a5d4ad62c5a7d.md.png)](https://www.imageoss.com/image/Fw2m9)
 3. (非必填）提供更详细的变更描述
 4. (非必填)是否存在不兼容变更?
 5. (非必填)此次变更是否影响某些打开的 bug/issue 
