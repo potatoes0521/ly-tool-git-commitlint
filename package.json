@@ -1,6 +1,6 @@
 {
   "name": "ly-tool-git-commitlint",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "基于vue-cli3的代码提交检查规范",
   "main": "index.js",
   "scripts": {
